@@ -1,10 +1,15 @@
 import RecipeCard from "./RecipeCard";
 
-function RecipeList() {
+function RecipeList(props) {
   return (
     <>
-      <p>Recipe List</p>
-      <RecipeCard />
+      {props.recipes ? (
+        props.recipes.map((recipe) => (
+          <RecipeCard key={recipe.id} recipe={recipe} />
+        ))
+      ) : (
+        <></>
+      )}
     </>
   );
 }

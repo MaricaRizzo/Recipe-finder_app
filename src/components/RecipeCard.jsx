@@ -1,8 +1,9 @@
-function RecipeCard() {
+function RecipeCard(props) {
   return (
-    <>
-      <p>Recipe card</p>
-    </>
+    <div key={props.recipe.id}>
+      <h3>{props.recipe.title}</h3>
+      <img src={props.recipe.image} alt={props.recipe.title} />
+    </div>
   );
 }
 
