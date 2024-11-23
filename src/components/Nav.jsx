@@ -4,6 +4,7 @@ function Nav() {
   return (
     <>
       <nav>
+        <h1>What's for dinner?</h1>
         <ul>
           <li>
             <Link to="/">Home</Link>

@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { useContext } from "react";
+import { useCallback, useContext } from "react";
 import { FavoritesContext } from "../context/FavoritesContext";
 
 function RecipeCard(props) {
@@ -10,17 +10,20 @@ function RecipeCard(props) {
     navigate(`/recipe/${props.recipe.id}`);
   };
 
-  const toggleFavorite = (event) => {
-    event.preventDefault();
+  const toggleFavorite = useCallback(
+    (event) => {
+      event.preventDefault();
 
-    setFavorites((prevFavorites) => {
-      if (prevFavorites.includes(props.recipe)) {
-        return prevFavorites.filter((item) => item !== props.recipe);
-      } else {
-        return [...prevFavorites, props.recipe];
-      }
-    });
-  };
+      setFavorites((prevFavorites) => {
+        if (prevFavorites.includes(props.recipe)) {
+          return prevFavorites.filter((item) => item !== props.recipe);
+        } else {
+          return [...prevFavorites, props.recipe];
+        }
+      });
+    },
+    [props.recipe, setFavorites]
+  );
 
   return (
     <div key={props.recipe.id}>
