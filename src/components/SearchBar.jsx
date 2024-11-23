@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { searchRecipes } from "../services/spoonacularAPI";
+import { useNavigate } from "react-router-dom";
 
 function SearchBar(props) {
   const [query, setQuery] = useState("");
@@ -9,7 +10,7 @@ function SearchBar(props) {
       const recipes = await searchRecipes(query);
       props.setRecipes(recipes);
     } catch (error) {
-      console.error("Error searching recipes:", error);
+      navigate("/error");
     }
   };
 

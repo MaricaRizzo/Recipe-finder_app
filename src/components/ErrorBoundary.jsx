@@ -1,7 +1,7 @@
 function ErrorBoundary() {
   return (
     <>
-      <p>ErrorBoundary</p>
+      <p>Oops! Something went wrong.</p>
     </>
   );
 }
