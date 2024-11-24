@@ -4,6 +4,7 @@ import HomePage from "./components/HomePage";
 import Favorites from "./components/Favorites";
 import RecipeDetails from "./components/RecipeDetails";
 import Nav from "./components/Nav";
+import Error from "./components/Error";
 
 function App() {
   return (
